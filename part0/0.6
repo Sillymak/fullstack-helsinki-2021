@@ -1,0 +1,12 @@
+note over client:
+User enters text into input box and clicks Save
+spa.js prevents form default and sendToServer()
+end note
+
+client->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+server-->client: 201 Created
+
+note over client:
+spa.js pushes new note to notes array locally
+redrawNotes()
+end note
