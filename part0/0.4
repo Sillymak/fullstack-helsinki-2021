@@ -1,0 +1,50 @@
+client->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+server-->client: HTML
+client->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+server-->client: main.css
+client->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+server-->client: main.js
+
+note over client:
+browser starts executing main.js
+send xhttp request for exampleapp/data.json
+end note
+
+client->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+server-->client: [{"content":"Hello (:","date":"2021-03-20T16:20:03.206Z"}]
+client->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/favicon.ico
+server-->client: HTML
+
+note over client:
+On xhttp readystate == 4 write data to console log
+build ul and populate li with all the data entries
+end note
+
+note over client:
+User enters text into input box and clicks Save
+end note
+
+client->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+server-->client: 302 /exampleapp/notes
+
+client->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+server-->client: HTML
+client->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+server-->client: main.css
+client->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+server-->client: main.js
+
+note over client:
+browser starts executing main.js
+send xhttp request for exampleapp/data.json
+end note
+
+client->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+server-->client: [{"content":"Hello (:","date":"2021-03-20T16:20:03.206Z"}]
+client->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/favicon.ico
+server-->client: HTML
+
+note over client:
+On xhttp readystate == 4 write data to console log
+build ul and populate li with all the data entries
+end note
